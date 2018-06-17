@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--[if IE 8 ]><html lang="en" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html lang="en" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Mi Popcorn</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- stylesheet for demo and examples -->
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<header>
+		
+		<img src="JE TITLE.png" width="700" height="150" alt=""/>
+		
+		
+	
+	</header>
+	
+	<nav id="navigation-menu">
+		<ul>
+			
+			<li><a href="#section-1"><img src="ANOUT.png" width="130	" height="40" alt=""/></a></li>
+			<li><a href="#section-2"><img src="NEWS.png" width="130" height="40" alt=""/></a></li>
+			<li><a href="#section-3"><img src="GALLERY.png" width="140" height="40" alt=""/></a></li>
+			<li><a href="#section-4"><img src="CONTECT.png" width="130" height="40" alt=""/></a></li>
+			
+		</ul>
+	</nav>
+	
+	<div id="content">
+		<section id="section-1">
+			<div class="content">
+			<img src="Page 1.png" width="1660" height="900px" alt=""/>
+		  
+			 
+				<hr /><a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+			</div>
+		</section>
+		<section id="section-2">
+			<div class="content">
+				<img src="Page 2.png" width="1660" height="1000px" alt=""/>
+				<hr /><a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+			</div>
+		</section>
+		
+		<section id="section-3">
+		
+		<div id="show">
+  <div id="nextnext">
+    <img src="next.png" width="100px" height="100px" alt=""/>
+  </div>
+  <div class="slideshow">
+   <img src="a.jpg" width="100%" />
+   <img src="b.jpg" width="100%" />
+   <img src="c.jpg" width="100%" />
+   <img src="d.jpg" width="100%" />
+   <img src="g.jpg" width="100%" />
+  </div>
+
+	</div>
+			<div class="content">
+				
+				<hr /><a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+			</div>
+		</section>
+		<section id="section-4">
+			<div class="content">
+				<img src="Page 4.png" width="1660" height="1000px" alt=""/>
+				<hr /><a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+			</div>
+		</section>
+		
+	</div>
+	
+	<footer>
+		<p>Page Scroll to id - jQuery plugin by <a href="http://manos.malihu.gr">malihu</a>. Plugin homepage: <a href="http://manos.malihu.gr/page-scroll-to-id">http://manos.malihu.gr/page-scroll-to-id</a>.</p>
+	</footer>
+	
+	<!-- Google CDN jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	
+	<!-- Page Scroll to id plugin -->
+	<script src="js/jquery.malihu.PageScroll2id.js"></script>
+	
+	<script>
+		(function($){
+			$(window).on("load",function(){
+				
+				/* Page Scroll to id fn call */
+				$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+					highlightSelector:"#navigation-menu a"
+				});
+				
+				/* demo functions */
+				$("a[rel='next']").click(function(e){
+					e.preventDefault();
+					var to=$(this).parent().parent("section").next().attr("id");
+					$.mPageScroll2id("scrollTo",to);
+				});
+				
+			});
+		})(jQuery);
+	</script>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.cycle.all.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+//$('.slideshow').cycle();
+//});
+
+$('.slideshow').cycle({   
+          fx:    'scrollRight',  //特效  shuffle , zoom , fade , turnDown , curtainX , scrollRight , scrollLeft
+		  next: '#nextnext',
+          //timeout:  1000,
+          random:  0 //or 1
+         });
+ });
+
+	</script>
+	
+	<style>
+#nextnext {	
+	height: 50px;
+	width: 50px;
+	background-color:;
+	position:fixed;
+	z-index:9999;
+	right: 2%;	
+	Top:50%;
+	
+	}
+	</style>
+</body>
+</html>
